@@ -60,6 +60,12 @@ df.isna().sum().sum() # numero de entradas vazias total
 
 df.describe() # estatisticas descritivas
 
+# Método GET DUMMIES exemplo
+df = pd.DataFrame({'cor': ['vermelho', 'azul', 'verde', 'vermelho'],
+                   'tamanho': ['pequeno', 'médio', 'grande', 'médio'],
+                   'formato': ['quadrado', 'redondo', 'redondo', 'quadrado']})
+df_dummies = pd.get_dummies(df, columns=['cor', 'tamanho'], prefix=['cor', 'tam'], prefix_sep='-', drop_first=True)
+
 ###############################################################
 #-------------------Data Visualization------------------------#
 ###############################################################
